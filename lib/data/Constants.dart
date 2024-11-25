@@ -18,4 +18,6 @@ class Constants{
     return users;
   }
 
+  static const String API_URL = "https://reqres.in/api";
+
 }

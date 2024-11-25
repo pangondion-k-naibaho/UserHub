@@ -1,13 +1,14 @@
   import 'package:flutter/material.dart';
   import 'package:flutter_riverpod/flutter_riverpod.dart';
   import 'package:logger/logger.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+  import 'package:shared_preferences/shared_preferences.dart';
   import '../../../di/Providers.dart';
   import '../../../utils/Extension.dart';
-import '../../custom_components/InputTextView.dart';
+  import '../../custom_components/InputTextView.dart';
   import '../../themes/AppColors.dart';
   import '../../../data/Constants.dart';
-import '../dashboard/Dashboard.dart';
+  import '../dashboard/Dashboard.dart';
+
 
   class Login extends ConsumerStatefulWidget {
     @override
@@ -35,56 +36,6 @@ import '../dashboard/Dashboard.dart';
         }
       }
     }
-
-    // Fungsi login yang akan dipanggil ketika user menekan tombol login
-    // Future<void> onLogin(String email, String password) async {
-    //   final loginViewModel = ref.read(loginViewModelProvider.notifier); // Ambil viewmodel dari Riverpod
-    //
-    //   // Cek inputan
-    //   if (email.isEmpty || password.isEmpty) {
-    //     log.e("Email atau password kosong.");
-    //     ScaffoldMessenger.of(context).showSnackBar(
-    //       const SnackBar(content: Text('Email atau password tidak boleh kosong')),
-    //     );
-    //     return;
-    //   }
-    //
-    //   try {
-    //     // Tampilkan loading
-    //     await loginViewModel.loginUser(email, password);
-    //
-    //     // ref.read(loginViewModelProvider.notifier).loginUser(email, password);
-    //
-    //     final loginState = ref.watch(loginViewModelProvider); // Mengamati perubahan state
-    //     if (loginState is AsyncLoading) {
-    //       // Tampilkan loading jika statusnya loading
-    //       return;
-    //     }
-    //
-    //     if (loginState is AsyncData) {
-    //       // Jika login berhasil dan ada data pengguna
-    //       final users = loginState.value;
-    //       if (users!.isNotEmpty) {
-    //         log.d("Login berhasil untuk user: ${users.first.email}");
-    //         // Navigator.pushReplacementNamed(context, '/home'); // Ganti '/home' dengan route yang sesuai
-    //       } else {
-    //         ScaffoldMessenger.of(context).showSnackBar(
-    //           const SnackBar(content: Text('Login gagal: User tidak ditemukan')),
-    //         );
-    //       }
-    //     } else if (loginState is AsyncError) {
-    //       // Jika terjadi error saat login
-    //       ScaffoldMessenger.of(context).showSnackBar(
-    //         const SnackBar(content: Text('Terjadi kesalahan. Cek kredensial anda.')),
-    //       );
-    //     }
-    //   } catch (e) {
-    //     log.e("Login error: $e");
-    //     ScaffoldMessenger.of(context).showSnackBar(
-    //       const SnackBar(content: Text('Terjadi kesalahan. Coba lagi nanti.')),
-    //     );
-    //   }
-    // }
 
     Future<void> onLogin(String email, String password) async {
       // Cek input email dan password
